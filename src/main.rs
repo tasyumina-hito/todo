@@ -12,6 +12,7 @@ struct TodoEntry {
 struct IndexTemplate {
     entries: Vec<TodoEntry>,
 }
+
 #[derive(Error, Debug)]
 enum MyError {
     #[error("Faild to render HTML")]
