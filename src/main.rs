@@ -67,7 +67,7 @@ async fn main() -> Result<(), actix_web::Error> {
         params![]
     )
     .expect("Faild to create a table `todo`.");
-    HttpServer::new(move || App::new().service(index))
+    HttpServer::new(move || App::new().service(index).data(pool.clone()))
         .bind("0.0.0.0:8080")?
         .run()
         .await?;
